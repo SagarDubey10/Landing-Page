@@ -1,0 +1,360 @@
+:root {
+  --background: #111827;
+  --background-light: #1f2937;
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --border-color: #374151;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(to bottom, var(--background), #0f172a);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero-full {
+  min-height: 100vh;
+  /* full screen height */
+  display: flex;
+  align-items: center;
+  /* center vertically */
+  justify-content: center;
+  /* center horizontally */
+  text-align: center;
+  flex-direction: column;
+}
+
+/* Hero Section */
+header {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.hero-content {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+.icon-container {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 auto 2rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-container svg {
+  width: 3rem;
+  height: 3rem;
+  color: var(--primary);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.button-group {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  /* NEW: enable flexbox inside buttons */
+  align-items: center;
+  /* vertically center content */
+  justify-content: center;
+  /* optional: center horizontally */
+  gap: 0.5rem;
+  /* NEW: space between text and icon */
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-light {
+  background: white;
+  color: var(--primary);
+  margin-top: 1rem;
+}
+
+.btn-light:hover {
+  background: #f3f4f6;
+}
+
+/* Features Section */
+.features {
+  padding: 5rem 0;
+  background: rgba(31, 41, 55, 0.5);
+  text-align: center;
+}
+
+.features h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: rgba(31, 41, 55, 0.5);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.feature-card svg {
+  color: var(--primary);
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Timeline Section */
+.timeline {
+  padding: 5rem 0;
+}
+
+.timeline h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(59, 130, 246, 0.2);
+  transform: translateX(-50%);
+}
+
+.timeline-step {
+  position: relative;
+  margin-bottom: 6rem;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.6s ease;
+}
+
+.timeline-step.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.step-content {
+  background: rgba(31, 41, 55, 0.5);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(10px);
+  width: calc(50% - 3rem);
+}
+
+.timeline-step.left .step-content {
+  margin-left: auto;
+}
+
+.step-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3rem;
+  height: 3rem;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+}
+
+/* Demo Section */
+.demo {
+  padding: 5rem 0;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+
+}
+
+.chat-demo {
+  background: rgba(31, 41, 55, 0.5);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.chat-message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.chat-message.user {
+  justify-content: flex-end;
+}
+
+.bot-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+}
+
+.message {
+  background: rgba(31, 41, 55, 0.5);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  max-width: 80%;
+}
+
+.user .message {
+  background: var(--primary);
+}
+
+/* CTA Section */
+.cta {
+  padding: 5rem 0;
+  background: rgba(59, 130, 246, 0.1);
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+/* Footer */
+footer {
+  background: #0f172a;
+  padding: 3rem 0;
+  color: var(--text-secondary);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.footer-column h3 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.footer-column ul li:hover {
+  color: var(--text-primary);
+}
+
+.footer-bottom {
+  margin-top: 3rem;
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .demo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-step .step-content {
+    width: calc(100% - 3rem);
+    margin: 0 !important;
+  }
+
+  .timeline-line {
+    left: 1.5rem;
+  }
+
+  .step-number {
+    left: 1.5rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
